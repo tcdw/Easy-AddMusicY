@@ -1,0 +1,19 @@
+{
+  "name": "easy-addmusicy",
+  "version": "1.0.0",
+  "description": "Make it more efficient to port songs with AddMusicY",
+  "main": "porter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcdw/Easy-AddMusicY.git"
+  },
+  "author": "tcdw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tcdw/Easy-AddMusicY/issues"
+  },
+  "homepage": "https://github.com/tcdw/Easy-AddMusicY#readme"
+}
