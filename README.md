@@ -4,7 +4,7 @@ Recently I want to try porting music with AddMusicY, but the way to get your SPC
 
 As you can see, I can build the mml.bin and SPC file, then open the SPC player automatically with an single command. If you load previous commend **with up arrow key**, you would get AddMusicK's porter mode like experience when porting stuff.
 
-![it works smoothly](https://i.loli.net/2019/03/23/5c965444efbd3.png)
+![it works smoothly](https://i.loli.net/2019/03/24/5c966492b7db9.png)
 
 ## Usage
 
@@ -25,6 +25,17 @@ node porter.js derp.mml
 ```
 
 Then, all of things will be handled automatically, and your generated SPC will be opened with your preferred SPC player.
+
+
+You can also define your SPC ID666 tags with these special syntax:
+
+```
+;@@title        song title, 32 characters max
+;@@game         game title, 32 characters max
+;@@artist       artist's name, 32 characters max
+;@@dumper       dumper's name, 16 characters max
+;@@comments     comments, 32 characters max
+```
 
 Happy porting!
 
