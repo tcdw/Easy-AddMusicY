@@ -3,13 +3,13 @@
 /** 
  * AddMusicY Made Easy (for porters)
  * Author: tcdw
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: MIT
  */
 
 'use strict';
 
-const version = '1.0.0';
+const version = '1.0.1';
 const fs = require('fs');
 const path = require('path');
 const { spawn, exec } = require('child_process');
@@ -136,7 +136,7 @@ console.log('[Compiling MML to BIN with AddMusicY]');
 const child = spawn(path.resolve(__dirname, 'AddMusicY_beta.exe'));
 child.stdin.setEncoding('utf-8');
 child.stdout.pipe(process.stdout);
-child.stdin.write("song.mml\n");
+child.stdin.write(argv[0] + "\n");
 child.stdin.end();
 child.on('close', (code) => {
     console.log(`AddMusicY exited with code ${code}`);

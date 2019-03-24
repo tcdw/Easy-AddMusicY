@@ -4,7 +4,7 @@ Recently I want to try porting music with AddMusicY, but the way to get your SPC
 
 As you can see, I can build the mml.bin and SPC file, then open the SPC player automatically with an single command. If you load previous commend **with up arrow key**, you would get AddMusicK's porter mode like experience when porting stuff.
 
-![it works smoothly](https://i.loli.net/2019/03/24/5c966492b7db9.png)
+![it works smoothly](https://i.loli.net/2019/03/24/5c96f624122c5.png)
 
 ## Usage
 
@@ -23,6 +23,8 @@ For example, if your song is located in your AddMusicY directory, and called "de
 ```bash
 node porter.js derp.mml
 ```
+
+Also, the file name shouldn't contain any spaces, or AddMusicY won't recognize.
 
 Then, all of things will be handled automatically, and your generated SPC will be opened with your preferred SPC player.
 

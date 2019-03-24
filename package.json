@@ -1,6 +1,6 @@
 {
   "name": "easy-addmusicy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Make it more efficient to port songs with AddMusicY",
   "main": "porter.js",
   "scripts": {
