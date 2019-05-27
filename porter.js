@@ -85,6 +85,14 @@ const writeSPC = () => {
         return e.split('\n')[0].trim();
     });
 
+    const pad = (s, len) => {
+        const str = String(s);
+        if (str.length >= len) {
+            return str;
+        }
+        return '0'.repeat(len - str.length) + str;
+    }
+
     const writeStrings = (str, pos, maxlen) => {
         const buffer = Buffer.from(str, { encoding: 'utf8' });
         if (buffer.length > maxlen) {
@@ -119,11 +127,22 @@ const writeSPC = () => {
                 case 'artist':
                     writeStrings(value, 0xB1, 32);
                     break;
+                case 'length':
+                    writeStrings(pad(value, 3), 0xA9, 3);
+                    break;
+                case 'fadeout':
+                    const realNum = Math.floor(Number(value) * 1000);
+                    writeStrings(pad(isNaN(realNum) ? 6666 : realNum, 5), 0xAC, 5);
+                break;
                 default:
                     break;
             }
         }
     });
+    // Date SPC was dumped (MM/DD/YYYY)
+    const now = new Date();
+    writeStrings(pad(now.getMonth() + 1, 2) + "/" + pad(now.getDate(), 2) + "/" + now.getFullYear(), 0x9E, 11);
+
     const spcPath = path.resolve(process.cwd(), 'output.spc');
     fs.writeFileSync(spcPath, template);
     return spcPath;
